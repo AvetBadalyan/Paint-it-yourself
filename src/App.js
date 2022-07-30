@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       {board.map((square) => (
         <div key={square} className="square" onClick={() => paint(square)}>
-          <div >
+          <div className={paintedSquares.has(square) ? "painted" : ""}>
             {square}
           </div>
         </div>

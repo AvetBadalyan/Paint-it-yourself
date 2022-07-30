@@ -10,3 +10,9 @@
   font-size: 7px;
   cursor: pointer;
 }
+
+.painted{
+  background-color: yellow;
+  width: 100%;
+  height: 100%;
+}
