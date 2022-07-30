@@ -10,12 +10,18 @@ const numberOfSquares = numberOfRows * 100;
 const board = Array.from(Array(numberOfSquares).keys());
 
 function App() {
+  const [paintedSquares, setPaintedSquares] = useState(new Set());
+  const paint = (id) => {
+    let newPainted = new Set([...paintedSquares]);
+    newPainted.add(id);
+    setPaintedSquares(newPainted);
+  };
 
   return (
     <div className="App">
       {board.map((square) => (
-        <div key={square} className="square">
-          <div>
+        <div key={square} className="square" onClick={() => paint(square)}>
+          <div >
             {square}
           </div>
         </div>
