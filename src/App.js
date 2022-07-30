@@ -8,10 +8,22 @@ const numberOfSquares = numberOfRows * 100;
 
 const board = Array.from(Array(numberOfSquares).keys());
 
+const groupArray = board.reduce((acc, item, index) => {
+  let currentIndex = index % (numberOfSquares/100);
+  (acc[currentIndex] = acc[currentIndex] || []).push(item);
+  return acc;
+}, []);
+
 function App() {
   return (
     <div className="App">
-     
+      {groupArray.map((row) => (
+        <div key={Math.random()} className="row">
+          {row.map((square) => (
+            <div key={square} className="square">{square}</div>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
