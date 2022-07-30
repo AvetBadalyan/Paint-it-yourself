@@ -13,7 +13,11 @@ function App() {
   const [paintedSquares, setPaintedSquares] = useState(new Set());
   const paint = (id) => {
     let newPainted = new Set([...paintedSquares]);
-    newPainted.add(id);
+    if (newPainted.has(id)) {
+      newPainted.delete(id);
+    } else {
+      newPainted.add(id);
+    }
     setPaintedSquares(newPainted);
   };
 
