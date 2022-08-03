@@ -13,6 +13,7 @@ const board = Array.from(Array(numberOfSquares).keys());
 function App() {
   // Show or hide the custom context menu
   const [isShown, setIsShown] = useState(false);
+  const [color, setColor] = useState("purple");
 
   // Show the custom context menu
   const showContextMenu = (e) => {
@@ -24,9 +25,11 @@ function App() {
     setIsShown(false);
   };
 
-  const paintBlue = () => {
+  const colors = ["blue", "yellow", "red", "green", "black"];
 
-  }
+  const paintColor = (color) => {
+    setColor(color);
+  };
   return (
     <div
       onContextMenu={showContextMenu}
@@ -34,15 +37,16 @@ function App() {
       className="App"
     >
       {board.map((square) => (
-        <Cell key={square} square={square} />
+        <Cell color={color} key={square} square={square} />
       ))}
       {isShown && (
         <div className="pop-up">
-          <button className="color-choose blue"></button>
-          <button className="color-choose yellow"></button>
-          <button className="color-choose red"></button>
-          <button className="color-choose green"> </button>
-          <button className="color-choose black"></button>
+          {colors.map((color) => (
+            <button
+              onClick={() => paintColor(color)}
+              className={`color-choose ${color}`}
+            ></button>
+          ))}
         </div>
       )}
     </div>
