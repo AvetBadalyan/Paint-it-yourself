@@ -1,17 +1,50 @@
-.App{
+.App {
   width: 100vw;
   height: 100vh;
   display: grid;
-   grid-template-columns: repeat(100, 1vw);
+  grid-template-columns: repeat(100, 1vw);
 }
 
-.square{
+.square {
   border: 1px solid gray;
   font-size: 7px;
   cursor: pointer;
   width: 1vw;
 }
 
-.painted{
+.painted {
   background-color: yellow;
+}
+
+.pop-up{
+  width: 10vw;
+  height: 5vh;
+  background-color: rgba(255, 255, 0, 0.6);
+  position: absolute;
+  bottom: 0;
+  left: 45%;
+  display: flex;
+  padding: 4px;
+}
+
+.color-choose{
+ width: 18%;
+ margin: 1%;
+ cursor: pointer;
+}
+
+.red{
+  background-color: red;
+}
+.green{
+  background-color: green;
+}
+.yellow{
+  background-color: yellow;
+}
+.blue{
+  background-color: blue;
+}
+.black{
+  background-color: black;
 }
