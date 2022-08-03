@@ -9,10 +9,9 @@
   border: 1px solid gray;
   font-size: 7px;
   cursor: pointer;
+  width: 1vw;
 }
 
 .painted{
   background-color: yellow;
-  width: 100%;
-  height: 100%;
 }
