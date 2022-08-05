@@ -23,6 +23,17 @@
   padding: 4px;
 }
 
+.fadeOut{
+     opacity:0;
+     transition: width 0.5s 0.5s, height 0.5s 0.5s, opacity 0.5s;
+
+}
+.fadeIn{
+     opacity:1;
+     transition: width 0.5s, height 0.5s, opacity 0.5s 0.5s;
+
+}
+
 .color-choose{
  width: 18%;
  margin: 1%;

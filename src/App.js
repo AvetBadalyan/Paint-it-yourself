@@ -9,16 +9,12 @@ const numberOfSquares = numberOfRows * 100;
 
 const board = Array.from(Array(numberOfSquares).keys());
 
-function App() {  
+function App() {
   return (
-    <div
-
-      className="App"
-    >
+    <div className="App">
       {board.map((square) => (
         <Cell key={square} square={square} />
       ))}
-
     </div>
   );
 }

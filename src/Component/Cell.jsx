@@ -22,6 +22,7 @@ export default function Cell({ square }) {
 
   const paintColor = (color) => {
     setColor(color);
+    setPainted(true);
   };
 
   const handlePainting = () => {
@@ -43,10 +44,14 @@ export default function Cell({ square }) {
     >
       {isShown && (
         <div className="pop-up">
-          {colors.map((color) => (
+          {colors.map((color, index) => (
             <button
+              key={index}
               className={`color-choose ${color}`}
-              onClick={() => paintColor(color)}
+              onClick={(e) => {
+                e.stopPropagation();
+                paintColor(color);
+              }}
             ></button>
           ))}
         </div>
