@@ -25,7 +25,7 @@ function App() {
       if (item.id === id) {
         return {
           ...item,
-          color: chooseColor,
+          color: item.color === "#ffffff" ? chooseColor : "#ffffff",
         };
       }
       return item;
@@ -44,11 +44,6 @@ function App() {
     setIsShown(false);
   };
 
-  // drag over cells
-  const handleDragOver = (id) => {
-    handlePainting(id);
-  }
-
   return (
     <div className="App" onContextMenu={showContextMenu}>
       {boardData.map((square) => (
@@ -59,7 +54,6 @@ function App() {
           chooseColor={chooseColor}
           handlePainting={handlePainting}
           key={square.id}
-          handleDragOver={handleDragOver}
         />
       ))}
       {isShown && (
@@ -70,7 +64,6 @@ function App() {
               type="color"
               onChange={(e) => setChooseColor(e.target.value)}
               value="#000000"
-              name="choose a color"
             />
           </label>
         </div>
