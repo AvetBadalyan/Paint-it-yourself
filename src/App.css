@@ -13,14 +13,29 @@
 }
 
 .pop-up{
-  width: 10vw;
-  height: 5vh;
-  background-color: rgba(255, 255, 0, 0.6);
+  width: 25vw;
+  height: 10vh;
+  background-color: rgba(255, 255, 0, 0.8);
   position: absolute;
-  bottom: 0;
-  left: 45%;
+  top: 0;
+  left: 40%;
   display: flex;
-  padding: 4px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 8px;
+  font-size: 3vh;
+  font-weight: bolder;
+}
+
+.pop-up label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1vh;
 }
 
 .fadeOut{

@@ -2,60 +2,32 @@ import React from "react";
 import { useState } from "react";
 import "./../App.css";
 
-export default function Cell({ square }) {
+export default function Cell({
+  square,
+  hideContextMenu,
+  chooseColor,
+  board,
+  handlePainting,
+}) {
   const [painted, setPainted] = useState(false);
-  // Show or hide the custom context menu
-  const [isShown, setIsShown] = useState(false);
-  const [color, setColor] = useState("blue");
 
-  // Show the custom context menu
-  const showContextMenu = (e) => {
-    e.preventDefault();
-    setIsShown(true);
-  };
-
-  const hideContextMenu = (e) => {
-    setIsShown(false);
-  };
-
-  const colors = ["blue", "yellow", "red", "green", "black"];
-
-  const paintColor = (color) => {
-    setColor(color);
-    setPainted(true);
-  };
-
-  const handlePainting = () => {
-    setPainted((prev) => !prev);
-  };
   const handleDragOver = (e) => {
     e.preventDefault();
+    setPainted(true);
+  };
+  const paintColor = (color) => {
+    // setChooseColor(color);
     setPainted(true);
   };
   return (
     <div
       onClick={() => {
-        handlePainting();
+        handlePainting(square.id);
         hideContextMenu();
       }}
       onDragOver={handleDragOver}
-      className={painted ? `square ${color}` : "square"}
-      onContextMenu={showContextMenu}
-    >
-      {isShown && (
-        <div className="pop-up">
-          {colors.map((color, index) => (
-            <button
-              key={index}
-              className={`color-choose ${color}`}
-              onClick={(e) => {
-                e.stopPropagation();
-                paintColor(color);
-              }}
-            ></button>
-          ))}
-        </div>
-      )}
-    </div>
+      className="square"
+      style={{ backgroundColor: square.color }}
+    ></div>
   );
 }
