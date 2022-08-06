@@ -44,6 +44,11 @@ function App() {
     setIsShown(false);
   };
 
+  // drag over cells
+  const handleDragOver = (id) => {
+    handlePainting(id);
+  }
+
   return (
     <div className="App" onContextMenu={showContextMenu}>
       {boardData.map((square) => (
@@ -54,6 +59,7 @@ function App() {
           chooseColor={chooseColor}
           handlePainting={handlePainting}
           key={square.id}
+          handleDragOver={handleDragOver}
         />
       ))}
       {isShown && (

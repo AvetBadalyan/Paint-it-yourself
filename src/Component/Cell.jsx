@@ -8,24 +8,15 @@ export default function Cell({
   chooseColor,
   board,
   handlePainting,
+  handleDragOver,
 }) {
-  const [painted, setPainted] = useState(false);
-
-  const handleDragOver = (e) => {
-    e.preventDefault();
-    setPainted(true);
-  };
-  const paintColor = (color) => {
-    // setChooseColor(color);
-    setPainted(true);
-  };
   return (
     <div
       onClick={() => {
         handlePainting(square.id);
         hideContextMenu();
       }}
-      onDragOver={handleDragOver}
+      onDragOver={() => handlePainting(square.id)}
       className="square"
       style={{ backgroundColor: square.color }}
     ></div>
