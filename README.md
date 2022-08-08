@@ -1,3 +1,7 @@
+![screenshot](./src/screenshots/screenshot.jpg)
+
+# A small app where the screen is full of cells, you can paint them by clicking or dragging the mouse, also you can choose the color
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
