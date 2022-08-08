@@ -57,7 +57,7 @@ function App() {
         />
       ))}
       {isShown && (
-        <div className="pop-up">
+        <div className={isShown ? "pop-up fade-in" : "pop-up fade-out"}>
           <label>
             <p>Select a color</p>
             <input
